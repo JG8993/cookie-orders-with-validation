@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>New Order</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center m-3">
+        <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-info border-info"><h1> &#127850; Cookie Orders W/ Validation &#127850; </h1></a>
+    </div>
+    <form action="/cookies" method="post" class="col-lg-3 offset-lg-3">
+        <h2 class="text-center">Log a New Order</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}    
+        <div class="form-row">
+            <div class="form-group">
+                <label for="customer_name"><strong>Name</strong></label>
+                <input type="text" name="customer_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="cookie_type"><strong>Cookie Type</strong></label>
+                <input type="text" name="cookie_type"class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="num_boxes"><strong>Number of Boxes</strong></label>
+                <input type="text" name="num_boxes"class="form-control">
+            </div>
+            <div>
+                <input type="submit" value="Submit" class="btn btn-dark m-2 p-2">
+                <a href="/" type="submit" class="btn btn-dark">Home</a>
+            </div>
+        </div>
+</body>
+</html>
